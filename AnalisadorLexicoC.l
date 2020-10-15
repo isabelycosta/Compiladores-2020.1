@@ -81,7 +81,7 @@ letter	[a-zA-Z]
 "print"              { printf("Keyword print: [%s]\t", yytext)    ;};
 "putc"               { printf("Keyword putc: [%s]\t", yytext)     ;};
 "include"            { printf("Keyword include: [%s]\t", yytext)  ;};
-"Function"+           { printf("Comeco de uma Funcao: [%s]\t", yytext)  ;};
+"Function"+           { printf("Keyword Function: [%s]\t", yytext)  ;};
 
 {letter}+		    { printf("Letra(s)/Palavra: [%s]>\t", yytext) ;};
 {digit}+	            { printf("Integer: [%s]\t", yytext)    ;};

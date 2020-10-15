@@ -1240,7 +1240,7 @@ YY_RULE_SETUP
 case 64:
 YY_RULE_SETUP
 #line 84 "AnalisadorLexicoC.l"
-{ printf("Comeco de uma Funcao: [%s]\t", yytext)  ;};
+{ printf("Keyword Function: [%s]\t", yytext)  ;};
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
