@@ -13,8 +13,13 @@ binary	[Z0-1]
 octal	[X0-7]
 hexad	[0-9A-F]
 letter	[a-zA-Z]
+func "int"|"double"|"float"|"char"
+funs "void"
 
 %%
+
+{func}.+"("+.+")" { printf("Funcao com retorno: [%s]\t", yytext) ;};
+{funs}.+"("+")" { printf("Funcao sem retorno: [%s]\t", yytext) ;};
 
 "+"                  { printf("Operador de adicao: [%s]\t" , yytext)	    ;};
 "-"                  { printf("Operador de subtracao: [%s]\t", yytext)	    ;};
@@ -81,7 +86,6 @@ letter	[a-zA-Z]
 "print"              { printf("Keyword print: [%s]\t", yytext)    ;};
 "putc"               { printf("Keyword putc: [%s]\t", yytext)     ;};
 "include"            { printf("Keyword include: [%s]\t", yytext)  ;};
-"Function"+           { printf("Keyword Function: [%s]\t", yytext)  ;};
 
 {letter}+		    { printf("Letra(s)/Palavra: [%s]>\t", yytext) ;};
 {digit}+	            { printf("Integer: [%s]\t", yytext)    ;};
@@ -90,6 +94,7 @@ letter	[a-zA-Z]
 {octal}*		    { printf("Octal: [%s]\t", yytext) ;};
 {binary}*		    { printf("Binario: [%s]\t", yytext) ;};
 {identifier}		{ printf("Identificador: [%s]\t", yytext) ;};
+
 
 {letter}+"["{digit}"]"		{ printf("Vetor: [%s]\t", yytext) ;};
 {letter}+"["{digit}"]"+"["{digit}"]"		{ printf("Matriz: [%s]\t", yytext) ;};
@@ -114,6 +119,7 @@ return 1;
 int main()
 {
 
+printf("\nEntre com qualquer valor:\n");
 
 
 yylex();
