@@ -7,7 +7,8 @@ O código analisa tokens da linguagem C e verifica se está lexicamente correto.
 Pré-requisitos para execução: Flex
 - Flex é um gerador de analisador léxico rápido. É uma ferramenta para gerar programas que realizam correspondência de padrões no texto. Existem muitos aplicativos para Flex, incluindo escrever compiladores em conjunto com GNU Bison. Flex é uma implementação gratuita do conhecido programa Lex.
 
-Autores:
+
+Autoras:
 - https://github.com/BiancaRBrito
 - https://github.com/JamilleSaraiva
 - https://github.com/isabelycosta
